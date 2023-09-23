@@ -1,15 +1,13 @@
 <template>
   <div>
-    <MyDialog></MyDialog>
+    <MyDialog>1</MyDialog>
 
-    <MyDialog>
-      你确认要退出么
-    </MyDialog>
+    <MyDialog></MyDialog>
   </div>
 </template>
 
 <script>
-import MyDialog from './components/MyDialog.vue'
+import MyDialog from './components/MyDialog'
 export default {
   data () {
     return {
