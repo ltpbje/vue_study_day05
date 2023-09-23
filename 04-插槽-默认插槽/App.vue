@@ -1,13 +1,8 @@
 <template>
   <div>
     <!-- 2. 在使用组件时，组件标签内填入内容 -->
-    <MyDialog>
-      <div>你确认要删除么</div>
-    </MyDialog>
-
-    <MyDialog>
-      <p>你确认要退出么</p>
-    </MyDialog>
+   <MyDialog>你确定要删除吗?</MyDialog>
+   <MyDialog>你确定要退出吗?</MyDialog>
   </div>
 </template>
 
