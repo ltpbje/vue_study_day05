@@ -8,29 +8,13 @@
         <th>操作</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody v-for="(item,index) in data" :key="item.id">
       <tr>
-        <td>1</td>
-        <td>小张</td>
-        <td>8</td>
+        <td>{{index + 1}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.age}}</td>
         <td>
-          <button>删除</button>
-        </td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>小张</td>
-        <td>8</td>
-        <td>
-          <button>删除</button>
-        </td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>小张</td>
-        <td>8</td>
-        <td>
-          <button>删除</button>
+          <slot :row="item"></slot>
         </td>
       </tr>
     </tbody>

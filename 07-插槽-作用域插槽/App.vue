@@ -1,8 +1,14 @@
 <template>
   <div>
-    <MyTable>
+    <MyTable :data="list">
+      <template #default="obj">
+        <button @click="del(obj)">删除</button>
+      </template>
     </MyTable>
-    <MyTable>
+    <MyTable :data="list2">
+      <template #default="{row}">
+        <button @click="check(row)">查找</button>
+      </template>
     </MyTable>
   </div>
 </template>
@@ -24,6 +30,15 @@ export default {
       ]
     }
   },
+  methods:{
+    del(obj){
+      console.log(obj.row.id);
+      this.list = this.list.filter(item=>item.id !== obj.row.id)
+    },
+    check(row){
+      alert(`姓名:${row.name},年龄:${row.age}`);
+    }
+  }, 
   components: {
     MyTable
   }
