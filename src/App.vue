@@ -1,65 +1,50 @@
 <template>
   <div class="table-case">
-    <table class="my-table">
-      <thead>
-        <tr>
-          <th>编号</th>
-          <th>名称</th>
-          <th>图片</th>
-          <th width="100px">标签</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>梨皮朱泥三绝清代小品壶经典款紫砂壶</td>
-          <td>
-            <img src="https://yanxuan-item.nosdn.127.net/f8c37ffa41ab1eb84bff499e1f6acfc7.jpg" />
-          </td>
-          <td>
-            <div class="my-tag">
-              <!-- <input 
-                class="input"
-                type="text"
-                placeholder="输入标签"
-              /> -->
-              <div class="text">
-                茶具
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>梨皮朱泥三绝清代小品壶经典款紫砂壶</td>
-          <td>
-            <img src="https://yanxuan-item.nosdn.127.net/221317c85274a188174352474b859d7b.jpg" />
-          </td>
-          <td>
-            <div class="my-tag">
-              <!-- <input
-                ref="inp"
-                class="input"
-                type="text"
-                placeholder="输入标签"
-              /> -->
-              <div class="text">
-                男靴
-              </div>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+        <table class="my-table">
+          <thead>
+            <tr>
+              <th>编号</th>
+              <th>名称</th>
+              <th>图片</th>
+              <th width="100px">标签</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>梨皮朱泥三绝清代小品壶经典款紫砂壶</td>
+              <td>
+                <img src="https://yanxuan-item.nosdn.127.net/f8c37ffa41ab1eb84bff499e1f6acfc7.jpg" />
+              </td>
+              <td>
+               <MyTag v-model="tempText"></MyTag>
+              </td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>梨皮朱泥三绝清代小品壶经典款紫砂壶</td>
+              <td>
+                <img src="https://yanxuan-item.nosdn.127.net/221317c85274a188174352474b859d7b.jpg" />
+              </td>
+              <td>
+              <MyTag></MyTag>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 </template>
 
 <script>
+import MyTag from './components/MyTag' 
 export default {
   name: 'TableCase',
-  components: {},
+  components: {
+    MyTag
+  },
   data() {
     return {
+      tempText:'茶具',
       goods: [
         {
           id: 101,
