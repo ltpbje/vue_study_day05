@@ -1,25 +1,22 @@
 <template>
   <div>
     <MyDialog>
-      <!-- 需要通过template标签包裹需要分发的结构，包成一个整体 -->
       <template v-slot:head>
-        <div>我是大标题</div>
+        我是头部
       </template>
-      
       <template v-slot:content>
-        <div>我是内容</div>
+        我是内容
       </template>
-
-      <template #footer>
+      <template #foot>
+        <button>确定</button>
         <button>取消</button>
-        <button>确认</button>
       </template>
     </MyDialog>
   </div>
 </template>
 
 <script>
-import MyDialog from './components/MyDialog.vue'
+import MyDialog from './components/MyDialog'
 export default {
   data () {
     return {

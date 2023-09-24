@@ -1,7 +1,6 @@
 <template>
   <div class="dialog">
     <div class="dialog-header">
-      <!-- 一旦插槽起了名字，就是具名插槽，只支持定向分发 -->
       <slot name="head"></slot>
     </div>
 
@@ -9,18 +8,16 @@
       <slot name="content"></slot>
     </div>
     <div class="dialog-footer">
-      <slot name="footer"></slot>
-    </div>
+    <slot name="foot"></slot>    
+</div>
   </div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-
-    }
-  }
+  data() {
+    return {}
+  },
 }
 </script>
 

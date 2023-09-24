@@ -1,18 +1,8 @@
 <template>
   <div>
-    <MyTable :data="list">
-      <!-- 3. 通过template #插槽名="变量名" 接收 -->
-      <template #default="obj">
-        <button @click="del(obj.row.id)">
-          删除
-        </button>
-      </template>
+    <MyTable>
     </MyTable>
-    
-    <MyTable :data="list2">
-      <template #default="{ row }">
-        <button @click="show(row)">查看</button>
-      </template>
+    <MyTable>
     </MyTable>
   </div>
 </template>
@@ -32,15 +22,6 @@ export default {
         { id: 2, name: '刘蓓蓓', age: 19 },
         { id: 3, name: '姜肖泰', age: 17 },
       ]
-    }
-  },
-  methods: {
-    del (id) {
-      this.list = this.list.filter(item => item.id !== id)
-    },
-    show (row) {
-      // console.log(row);
-      alert(`姓名：${row.name}; 年纪：${row.age}`)
     }
   },
   components: {

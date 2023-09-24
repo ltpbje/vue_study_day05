@@ -9,21 +9,28 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="(item, index) in data" :key="item.id">
-        <td>{{ index + 1 }}</td>
-        <td>{{ item.name }}</td>
-        <td>{{ item.age }}</td>
+      <tr>
+        <td>1</td>
+        <td>小张</td>
+        <td>8</td>
         <td>
-          <!-- 1. 给slot标签，添加属性的方式传值 -->
-          <slot :row="item" msg="测试文本"></slot>
-
-          <!-- 2. 将所有的属性，添加到一个对象中 -->
-          <!-- 
-             {
-               row: { id: 2, name: '孙大明', age: 19 },
-               msg: '测试文本'
-             }
-           -->
+          <button>删除</button>
+        </td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>小张</td>
+        <td>8</td>
+        <td>
+          <button>删除</button>
+        </td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>小张</td>
+        <td>8</td>
+        <td>
+          <button>删除</button>
         </td>
       </tr>
     </tbody>
@@ -33,8 +40,8 @@
 <script>
 export default {
   props: {
-    data: Array
-  }
+    data: Array,
+  },
 }
 </script>
 
