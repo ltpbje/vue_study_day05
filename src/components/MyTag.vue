@@ -7,7 +7,7 @@
     class="input"
     type="text"
     placeholder="输入标签"
-    @blur="isEdit = false "/>
+    @blur="handleBlur"/>
     <div v-else 
     class="text" 
      @dblclick="showEdit">
@@ -34,10 +34,15 @@ methods:{
     // })
    } ,
    handleEnter(e){
-    // console.log('回车了');
+    console.log('回车了');
     if(e.target.value.trim() === '') return alert('输入不能为空')
     this.$emit('input',e.target.value)
     this.isEdit = false
+   },
+   handleBlur(e){
+      if (e.target.value.trim() === '') return alert('输入不能为空')
+      this.$emit('input', e.target.value)
+      this.isEdit = false   
    }
 }
 }
