@@ -27,7 +27,7 @@
                 <img src="https://yanxuan-item.nosdn.127.net/221317c85274a188174352474b859d7b.jpg" />
               </td>
               <td>
-              <MyTag></MyTag>
+              <MyTag v-model="tempText1"></MyTag>
               </td>
             </tr>
           </tbody>
@@ -45,6 +45,7 @@ export default {
   data() {
     return {
       tempText:'茶具',
+      tempText1:'鞋具',
       goods: [
         {
           id: 101,

@@ -3,11 +3,11 @@
     <input v-if="isEdit"
     :value="value"
     v-focus
-    @keyup.enter="handleEnter()"
+    @keyup.enter="handleEnter"
     class="input"
     type="text"
     placeholder="输入标签"
-    @blur="isEdit = false"/>
+    @blur="isEdit = false "/>
     <div v-else 
     class="text" 
      @dblclick="showEdit">
@@ -34,9 +34,9 @@ methods:{
     // })
    } ,
    handleEnter(e){
-    console.log('回车了');
+    // console.log('回车了');
     if(e.target.value.trim() === '') return alert('输入不能为空')
-    // this.$emit('input',e.target.value)
+    this.$emit('input',e.target.value)
     this.isEdit = false
    }
 }
