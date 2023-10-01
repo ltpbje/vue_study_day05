@@ -1,46 +1,36 @@
 <template>
   <div class="table-case">
-        <table class="my-table">
-          <thead>
-            <tr>
-              <th>编号</th>
-              <th>名称</th>
-              <th>图片</th>
-              <th width="100px">标签</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>梨皮朱泥三绝清代小品壶经典款紫砂壶</td>
-              <td>
-                <img src="https://yanxuan-item.nosdn.127.net/f8c37ffa41ab1eb84bff499e1f6acfc7.jpg" />
-              </td>
-              <td>
-               <MyTag v-model="tempText"></MyTag>
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>梨皮朱泥三绝清代小品壶经典款紫砂壶</td>
-              <td>
-                <img src="https://yanxuan-item.nosdn.127.net/221317c85274a188174352474b859d7b.jpg" />
-              </td>
-              <td>
-              <MyTag v-model="tempText1"></MyTag>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <MyTable :data="goods">
+        <template #header>
+          <tr>
+            <th>编号</th>
+            <th>名称</th>
+            <th>图片</th>
+            <th width="100px">标签</th>
+          </tr>
+        </template>
+        <template #body="obj">
+          <td>{{ obj.index + 1 }}</td>
+          <td>{{ obj.item.name }}</td>
+          <td>
+            <img :src="obj.item.picture" />
+          </td>
+          <td>
+            <MyTag v-model="obj.item.tag"></MyTag>
+          </td>
+        </template>
+      </MyTable>       
+  </div>
 </template>
 
 <script>
 import MyTag from './components/MyTag' 
+import MyTable from './components/MyTable.vue'
 export default {
   name: 'TableCase',
   components: {
-    MyTag
+    MyTag,
+    MyTable
   },
   data() {
     return {
